@@ -6,6 +6,7 @@
 <center>
 
 <?php
+ include_once('html/include/functions.php');
 
 ob_start(); 
 ob_flush();
@@ -13,10 +14,24 @@ ob_flush();
 
 if(isset($_POST['login'])) { $password = $_POST['pswd'];
 
-if ( $password == "mhvtl" ) { //Replace with your password
+ if ( file_exists(dirname(__FILE__).'/html/include/password.php')){
+  // Replace your password in include/password.php
+  require_once(dirname(__FILE__).'/html/include/password.php');
+ }else{
+  // password file does not exists lets create a default one
+  $adminpassword='mhvtl';
+  $FILE_TEMPLATE_PASSWORD="<?php // DEFAULT ADMIN PASSWORD
+   \$adminpassword='$adminpassword';
+   ?>";
+  file_put_contents(dirname(__FILE__).'/html/include/password.php',$FILE_TEMPLATE_PASSWORD);
+  // Since it's the FIRST time we run we show the password on html
+  echo "<font color='white'>Default password is ".$adminpassword."<br> please change it on <br>".dirname(__FILE__)."/html/include/password.php<br>";
+ }
+
+if ( $password == $adminpassword ) {
   $_SESSION['phplogin'] = true;
-    header('Location: html/mhvtl.php');
-    exit;
+ HttpRedirect(dirname($_SERVER['PHP_SELF']).'/html/mhvtl.php');
+ exit;
    } else {
 ?>
   <script type="text/javascript">
