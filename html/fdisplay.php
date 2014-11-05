@@ -1,13 +1,23 @@
-<?php
+<form action="confirm.start_mhvtl.php" method="post" onsubmit="return ray.ajax()">
 
-echo '<form action="confirm.start_mhvtl.php" method="post" onsubmit="return ray.ajax()"><input TYPE="submit" class=sameSize2 style="background-color:#008000; color: #FFFFFF; font-weight: bold" value="Start" src="images/turn_on.png" ></form>';
-echo '<form action="confirm.stop_mhvtl.php" method="post" onsubmit="return ray.ajax()"><input TYPE="submit" class=sameSize2 style="background-color:#FF0000; color: #FFFFFF; font-weight: bold" value="Stop" src="images/turn_off.png" ></form>';
-echo '<form action="activity.php" method="post" onsubmit="return ray.ajax()"><input TYPE="submit" class=sameSize2 style="background-color:#FFFF00; color: #000000; font-weight: bold" value=" Monitor " ></form>';
-echo '<form action="monitor.php" method="post" onsubmit="return ray.ajax()"><input TYPE="submit" class=sameSize2 style="background-color:#800080; color: #FFFFFF; font-weight: bold" value=" System " ></form>';
-echo '<form action="console.php" method="post" onsubmit="return ray.ajax()"><input TYPE="submit" class=sameSize2 style="background-color:#eeeeee; color: #000000; font-weight: bold" value=" Refresh " ></form>';
-echo "<BR>";
-echo "<BR>";
-?>
+ <input TYPE="submit" class="btn-group-sm  btn-success"
+        value="Start"  >
+</form>
+<form action="confirm.stop_mhvtl.php" method="post" onsubmit="return ray.ajax()">
+ <input TYPE="submit" class="btn-group-sm  btn-danger" value="Stop"  >
+</form>
+
+<form action="activity.php" method="post" onsubmit="return ray.ajax()">
+ <input TYPE="submit" class="btn-group-sm  btn-info"  value=" Monitor " >
+</form>
+
+<form action="monitor.php" method="post" onsubmit="return ray.ajax()">
+ <input TYPE="submit" class="btn-group-sm  btn-default" value=" System " >
+</form>
+
+<form action="console.php" method="post" onsubmit="return ray.ajax()">
+ <input TYPE="submit"  class="btn-group-sm  btn-primary" value="Refresh"></form>
+
 
 <?php
 
